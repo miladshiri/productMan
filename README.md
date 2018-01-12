@@ -1,0 +1,1 @@
+#This is a web service based on django framework to manage stock keeping unit (SKU) 
