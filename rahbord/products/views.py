@@ -49,30 +49,30 @@ class SaveAllData(APIView):
     permission_classes = [IsAuthenticated, ]
 
     def post(self, request):
-        registeration_serializer = RegisterationSerializers(data=request.data['registeration'])
+        for data in request.data['request']:
+            registeration_serializer = RegisterationSerializers(data=data['registeration'])
 
-        if registeration_serializer.is_valid():
-            registration, created = registeration_serializer.save()
+            if registeration_serializer.is_valid():
+                registration, created = registeration_serializer.save()
 
-            skus_data = request.data['skus']
-            for sku in skus_data:
+                skus_data = data['skus']
+                for sku in skus_data:
+                    sku['registration'] = registration.id
+                    sku_serializer = SaveSkuSerializer(data=sku)
+                    if sku_serializer.is_valid():
+                        sku_instance, created = sku_serializer.save()
 
-                sku['registration'] = registration.id
-                sku_serializer = SaveSkuSerializer(data=sku)
-                if sku_serializer.is_valid():
-                    sku_instance, created = sku_serializer.save()
+                        answers = sku['answers']
+                        for answer in answers:
+                            answer['sku'] = sku_instance.id
+                            answer_serializer = AnswersSerializers(data=answer)
+                            if answer_serializer.is_valid():
+                                answer_serializer.save()
 
-                    answers = sku['answers']
-                    for answer in answers:
-                        answer['sku'] = sku_instance.id
-                        answer_serializer = AnswersSerializers(data=answer)
-                        if answer_serializer.is_valid():
-                            answer_serializer.save()
-
-            return Response(
-                data={'detail': 'all data is saved.'},
-                status=status.HTTP_200_OK
-            )
+        return Response(
+            data={'detail': 'all data is saved.'},
+            status=status.HTTP_200_OK
+        )
 
 
 class SaveImage(APIView):
