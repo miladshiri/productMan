@@ -122,6 +122,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
+ALLOWED_HOSTS = ["82.102.11.124",
+                 "127.0.0.1"]
 
 
 REST_FRAMEWORK = {
