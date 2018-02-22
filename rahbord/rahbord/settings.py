@@ -39,11 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'products',
+    'utils',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -140,7 +142,9 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.FormParser',
         'rest_framework.parsers.MultiPartParser',
 
-    )
+    ),
+    'EXCEPTION_HANDLER':
+        'utils.exception_handler.custom_exception_handler',
 }
 
 JWT_AUTH = {
@@ -157,3 +161,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Constants
 USER_PROFILE_IMAGE_PATH = 'product_images'
 
+
+# -----------------------------------------------------------------------------
+# region I18N SETTINGS
+
+LANGUAGE_CODE = 'fa'
+LANGUAGE_BIDI = True
+TIME_ZONE = 'Asia/Tehran'
+USE_I18N = True
+USE_L10N = True
+USE_TZ = False
+LOCALES_DIR = 'locale'
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, LOCALES_DIR),
+)
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
+
+# endregion

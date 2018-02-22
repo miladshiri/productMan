@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-22 07:47-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\products\views.py:40
+msgid "enter username and password correctly"
+msgstr "نام کاربری و رمز عبور را درست وارد کنید"
+
+#: .\products\views.py:82
+msgid "all data is saved successfully"
+msgstr "داده ها با موفقیت ذخیره گردید"
+
+#: .\products\views.py:104
+msgid "problem in saving the image"
+msgstr "مشکل در ذخیره سازی عکس"
+
+#: .\products\views.py:109
+msgid "Image successfully updated!"
+msgstr "عکس با موفقیت ذخیره شد"
+
+#: .\utils\exception_handler.py:16
+msgid "Request was throttled. Expected available in {} seconds."
+msgstr ""
+
+#: .\utils\exception_handler.py:23
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: .\utils\exception_handler.py:30
+msgid "Authentication credentials were not provided."
+msgstr "برای این کار ابتدا وارد شوید"

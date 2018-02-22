@@ -13,7 +13,11 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
+from django.utils.translation import gettext as _
+import sys
 
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 class UserLoginAPI(APIView):
     permission_classes = ([AllowAny, ])
@@ -31,6 +35,11 @@ class UserLoginAPI(APIView):
                 data=response_serializer.data,
                 status=status.HTTP_200_OK
             )
+
+        return Response(
+            data={'detail':_('enter username and password correctly')},
+            status=status.HTTP_401_UNAUTHORIZED
+        )
 
 
 class GetAllSkuAPI(generics.ListAPIView):
@@ -70,9 +79,11 @@ class SaveAllData(APIView):
                                 answer_serializer.save()
 
         return Response(
-            data={'detail': 'all data is saved.'},
+            data={'detail': _('all data is saved successfully')},
             status=status.HTTP_200_OK
         )
+
+
 
 
 class SaveImage(APIView):
@@ -89,11 +100,12 @@ class SaveImage(APIView):
         if serializer.is_valid():
             serializer.save()
         else:
-            return Response(serializer.errors,
+            return Response(
+                            data={'detail': _('problem in saving the image')},
                             status=status.HTTP_400_BAD_REQUEST
                             )
 
         return Response(
-            data={"detail": "Image successfully updated!"},
+            data={"detail": _("Image successfully updated!")},
             status=status.HTTP_200_OK
         )

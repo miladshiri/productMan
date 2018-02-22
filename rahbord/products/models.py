@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 
 from django.db import models
-#from django.contrib.gis.db import models
 
 
 class TimeStampedModel(models.Model):
@@ -43,7 +42,6 @@ class Sku(TimeStampedModel):
     company = models.CharField(max_length=100, blank=True, null=True)
     brand = models.CharField(max_length=100, blank=True, null=True)
     sub_brand = models.CharField(max_length=100, blank=True, null=True)
-    # sent_at = models.DateTimeField(blank=True, null=True)
     sent_at = models.IntegerField(blank=True, null=True)
     sent_loc_lat = models.FloatField(blank=True, null=True)
     sent_loc_long = models.FloatField(blank=True, null=True)
