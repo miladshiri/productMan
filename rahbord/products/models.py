@@ -73,3 +73,7 @@ class SkuImage(TimeStampedModel):
     sku = models.ForeignKey(Sku, on_delete=models.CASCADE)
     image = models.ImageField()
 
+    def __str__(self):
+        return self.sku.hash_code
+
+

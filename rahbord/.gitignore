@@ -1,0 +1,6 @@
+*.pyc
+rahbord/db\.sqlite3
+
+rahbord/\.idea/
+
+rahbord/media/
