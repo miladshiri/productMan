@@ -77,7 +77,11 @@ class SaveAllData(APIView):
                             answer_serializer = AnswersSerializers(data=answer)
                             if answer_serializer.is_valid():
                                 answer_serializer.save()
-
+            else:
+                return Response(
+                    data={'detail': _('problem in registration data')},
+                    status=status.HTTP_200_OK
+                )
         return Response(
             data={'detail': _('all data is saved successfully')},
             status=status.HTTP_200_OK

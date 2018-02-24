@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-22 07:47-0800\n"
+"POT-Creation-Date: 2018-02-24 02:41-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,14 +23,19 @@ msgid "enter username and password correctly"
 msgstr "نام کاربری و رمز عبور را درست وارد کنید"
 
 #: .\products\views.py:82
+
+msgid "problem in registration data"
+msgstr "مشکل در داده رجیستر"
+
+#: .\products\views.py:86
 msgid "all data is saved successfully"
 msgstr "داده ها با موفقیت ذخیره گردید"
 
-#: .\products\views.py:104
+#: .\products\views.py:108
 msgid "problem in saving the image"
 msgstr "مشکل در ذخیره سازی عکس"
 
-#: .\products\views.py:109
+#: .\products\views.py:113
 msgid "Image successfully updated!"
 msgstr "عکس با موفقیت ذخیره شد"
 
