@@ -17,7 +17,7 @@ class Registration(TimeStampedModel):
     questioner_last_name = models.CharField(max_length=100, blank=True, null=True)
     district = models.IntegerField(blank=True, null=True)
     # started_at = models.DateTimeField(blank=True, null=True)
-    started_at = models.IntegerField(blank=True, null=True)
+    started_at = models.CharField(max_length=100, blank=True, null=True)
     city = models.CharField(max_length=100, blank=True, null=True)
     market_name = models.CharField(max_length=100, blank=True, null=True)
     start_loc_lat = models.FloatField(blank=True, null=True)
