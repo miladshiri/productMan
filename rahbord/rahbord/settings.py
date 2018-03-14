@@ -129,7 +129,8 @@ STATIC_URL = '/static/'
 
 
 ALLOWED_HOSTS = ["82.102.11.124",
-                 "127.0.0.1"]
+                 "127.0.0.1",
+                 "46.209.107.34"]
 
 
 REST_FRAMEWORK = {
