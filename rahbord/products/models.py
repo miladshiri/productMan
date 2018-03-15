@@ -45,7 +45,7 @@ class Group(TimeStampedModel):
 class Sku(TimeStampedModel):
     hash_code = models.CharField(max_length=100, blank=True, null=True)
     title = models.CharField(max_length=100, blank=True, null=True)
-    barcode = models.IntegerField(blank=True, null=True)
+    barcode = models.CharField(max_length=100, blank=True, null=True)
     group = models.ForeignKey(Group, on_delete=models.CASCADE, blank=True, null=True)
     sub_group = models.CharField(max_length=100, blank=True, null=True)
     company = models.CharField(max_length=100, blank=True, null=True)
